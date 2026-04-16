@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bo62am606gtv3"]
+
+[ext_resource type="Script" uid="uid://baqm76odvl26j" path="res://scripts/piece.gd" id="1_3653e"]
+[ext_resource type="Texture2D" uid="uid://l0qmecs88k54" path="res://asssets/pieces.png" id="1_nrwpe"]
+
+[node name="Piece" type="Node2D"]
+script = ExtResource("1_3653e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_nrwpe")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)

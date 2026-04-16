@@ -11,8 +11,20 @@ config_version=5
 [application]
 
 config/name="chess"
+run/main_scene="uid://clo0qo0tahyxn"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Globals="*res://scripts/globals.gd"
+
+[display]
+
+window/size/viewport_width=1440
+window/size/viewport_height=1440
+window/stretch/mode="canvas_items"
+window/stretch/scale=3.0
 
 [editor_plugins]
 

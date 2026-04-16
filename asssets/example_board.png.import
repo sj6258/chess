@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yaw6s4kax2rb"
-path="res://.godot/imported/Piece_move.png-08756bd7b51696a9bd6b86190058632c.ctex"
+uid="uid://bqkkv5iojgqpn"
+path="res://.godot/imported/example_board.png-33b500b29fc98b531bc63edd048d12c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asssets/Piece_move.png"
-dest_files=["res://.godot/imported/Piece_move.png-08756bd7b51696a9bd6b86190058632c.ctex"]
+source_file="res://asssets/example_board.png"
+dest_files=["res://.godot/imported/example_board.png-33b500b29fc98b531bc63edd048d12c3.ctex"]
 
 [params]
 
