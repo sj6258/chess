@@ -47,7 +47,7 @@ func get_pos_under_mouse():
 
 func drop_piece():
 	var to_move = get_pos_under_mouse()
-	if valid_move(selected_piece.position, to_move):
+	if valid_move(selected_piece.board_position, to_move):
 		var dest_piece = board.get_piece(to_move)
 		if dest_piece != null and dest_piece.color != selected_piece.color:
 			board.delete_piece(dest_piece)
@@ -56,5 +56,28 @@ func drop_piece():
 		return true
 	return false
 
-func valid_move(from_pos , to_pos):
+func valid_move(from_pos, to_pos):
+	var board_copy = board.clone()
+	var src_piece = board_copy.get_piece(from_pos)
+	
+	# If we cannot move to threatened or moveable position
+	if(
+		to_pos not in src_piece.get_moveable_positions() 
+		and 
+		to_pos not in src_piece.get_threatened_positions()
+	):
+		return false
+	
+	
+	var dst_piece = board_copy.get_piece(to_pos)
+	if dst_piece != null:
+		board_copy.delete_piece(dst_piece)
+	src_piece.move_position(to_pos)
+	
+	for piece in board_copy.pieces:
+		if status == Globals.COLORS.BLACK and board_copy.black_king_pos in piece.get_threatened_positions():
+			return false
+		if status == Globals.COLORS.WHITE and board_copy.white_king_pos in piece.get_threatened_positions():
+			return false
+	
 	return true
